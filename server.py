@@ -42,7 +42,7 @@ def predict():
             'Obesity Type III',
         ]
         
-        return jsonify({'prediction': target_labels[pred]})
+        return jsonify({'prediction': target_labels[pred[0]]})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
