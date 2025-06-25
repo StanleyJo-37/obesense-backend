@@ -6,7 +6,10 @@ import pickle
 import pandas as pd
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3001"}})
+CORS(app, resources={r"/api/*": {"origins": [
+    "http://localhost:3000", 
+    "https://peter-louisx.github.io"
+]}})
 
 model = pickle.load(open('model/model.pkl', 'rb'))
 
